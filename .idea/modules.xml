@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/halushka_pampushka_bot.iml" filepath="$PROJECT_DIR$/.idea/halushka_pampushka_bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bot/appz_bot_example-master/hello_bot/kpi.acts.hello_bot.iml" filepath="$PROJECT_DIR$/bot/appz_bot_example-master/hello_bot/kpi.acts.hello_bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bot/appz_bot_example-master/telegram_bot/kpi.acts.telegram-bot.iml" filepath="$PROJECT_DIR$/bot/appz_bot_example-master/telegram_bot/kpi.acts.telegram-bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bot/appz_bot_example-master/parent.iml" filepath="$PROJECT_DIR$/bot/appz_bot_example-master/parent.iml" />
     </modules>
   </component>
 </project>

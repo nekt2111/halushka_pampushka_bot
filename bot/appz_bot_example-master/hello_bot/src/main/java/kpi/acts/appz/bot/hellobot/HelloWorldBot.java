@@ -26,6 +26,58 @@ public final class HelloWorldBot extends Bot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        sendTextMessage(update.getMessage(), "Hello world!");
+        sendTextMessage(update.getMessage(), getResponseMessageText(update.getMessage().getText()));
+    }
+
+    public String getResponseMessageText(String messageText) {
+
+        String responseMessage;
+
+        switch (messageText.toLowerCase()) {
+
+            case "tsymbal":
+                responseMessage = "The best";
+
+            case "halushka":
+                responseMessage = "PAMPUSHKA :)";
+
+            case "jereb":
+                responseMessage = "BAD BOY";
+
+            case "baba valya":
+                responseMessage = "";
+
+            case "kpi":
+                responseMessage = "";
+
+            case "fiot":
+                responseMessage = "";
+
+            case "rolik":
+                responseMessage = "";
+
+            case "stefanie":
+                responseMessage = "";
+
+            case "eurovision":
+                responseMessage = "";
+
+            default:
+                responseMessage = makeMagic(messageText);
+
+        }
+        return responseMessage + "\n Have a pampushka with a halushka :)";
+    }
+
+    public String makeMagic(String str) {
+
+        if (str.length() > 3 && str.length() < 10) {
+            return "hui" + str.substring(3);
+        }
+        else if(str.length() > 10) {
+            return "NIKITA BOT!";
+        }
+
+        return "SEREGA BOG!";
     }
 }
