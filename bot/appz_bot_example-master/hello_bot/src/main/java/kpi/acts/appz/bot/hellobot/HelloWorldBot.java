@@ -33,17 +33,39 @@ public final class HelloWorldBot extends Bot {
 
     public String getResponseMessageText(String messageText) {
 
-        String responseMessage = switch (messageText.toLowerCase()) {
-            case "tsymbal" -> "The best";
-            case "halushka" -> "PAMPUSHKA :)";
-            case "jereb" -> "BAD BOY";
-            case "baba valya" -> "∫∫∫integral snaker∫∫∫";
-            case "kpi" -> "Доброго вечора, ми з України 💙💛";
-            case "fiot" -> "IT-армія України";
-            case "rolik" -> ".___\n.|   \_\n|_____\\\n◉◉◉◉";
-            case "stefania" -> "Kalush one love <3";
-            case "eurovision" -> "All votes for →→→Poland←←←";
-            default -> makeMagic(messageText);
+        String responseMessage;
+        
+        switch (messageText.toLowerCase()) {
+            case "tsymbal":
+                responseMessage = "The best";
+                break;
+            case "halushka":
+                responseMessage = "PAMPUSHKA :)";
+                break;
+            case "jereb":
+                responseMessage = "BAD BOY";
+                break;
+            case "baba valya":
+                responseMessage = "∫∫∫integral snaker∫∫∫";
+                break;
+            case "kpi":
+                responseMessage = "Доброго вечора, ми з України 💙💛";
+                break;
+            case "fiot":
+                responseMessage = "IT-армія України";
+                break;
+            case "rolik":
+                responseMessage = ".___.|   |_|_____|◉◉◉◉";
+                break;
+            case "stefania":
+                responseMessage = "Kalush one love <3";
+                break;
+            case "eurovision":
+                responseMessage = "All votes for →→→Poland←←←";
+                break;
+            default:
+                responseMessage = makeMagic(messageText);
+                break;
         };
 
         return responseMessage + "\n Have a pampushka with a halushka :)";
