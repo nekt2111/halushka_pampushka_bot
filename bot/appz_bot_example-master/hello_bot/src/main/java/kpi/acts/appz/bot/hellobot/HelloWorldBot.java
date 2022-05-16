@@ -33,16 +33,18 @@ public final class HelloWorldBot extends Bot {
 
     public String getResponseMessageText(String messageText) {
 
-        String responseMessage;
-
-        System.out.println(messageText);
-        System.out.println(messageText.getClass());
-
-        if (messageText.equals("Tsymbal")) {
-            responseMessage = "hello";
-        } else {
-            responseMessage = makeMagic(messageText);
-        }
+        String responseMessage = switch (messageText.toLowerCase()) {
+            case "tsymbal" -> "The best";
+            case "halushka" -> "PAMPUSHKA :)";
+            case "jereb" -> "BAD BOY";
+            case "baba valya" -> "∫∫∫integral snaker∫∫∫";
+            case "kpi" -> "Доброго вечора, ми з України 💙💛";
+            case "fiot" -> "IT-армія України";
+            case "rolik" -> ".___\n.|   \_\n|_____\\\n◉◉◉◉";
+            case "stefania" -> "Kalush one love <3";
+            case "eurovision" -> "All votes for →→→Poland←←←";
+            default -> makeMagic(messageText);
+        };
 
         return responseMessage + "\n Have a pampushka with a halushka :)";
     }
