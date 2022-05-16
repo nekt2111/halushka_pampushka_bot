@@ -11,9 +11,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="kpi.acts.hello_bot" target="8" />
-      <module name="kpi.acts.telegram-bot" target="8" />
-      <module name="parent" target="8" />
+      <module name="kpi.acts.hello_bot" target="14" />
+      <module name="kpi.acts.telegram-bot" target="1.8" />
+      <module name="parent" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
