@@ -42,7 +42,7 @@ public final class HelloWorldBot extends Bot {
             case "stefanie" -> "";
             case "eurovision" -> "";
             default -> makeMagic(messageText);
-        }
+        };
 
         return responseMessage + "\n Have a pampushka with a halushka :)";
     }
