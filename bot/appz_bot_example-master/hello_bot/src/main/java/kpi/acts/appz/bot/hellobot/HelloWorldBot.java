@@ -41,9 +41,9 @@ public final class HelloWorldBot extends Bot {
             case "baba valya" -> "∫∫∫integral snaker∫∫∫";
             case "kpi" -> "Доброго вечора, ми з України 💙💛";
             case "fiot" -> "IT-армія України";
-            case "rolik" -> "";
-            case "stefanie" -> "";
-            case "eurovision" -> "";
+            case "rolik" -> ".___\n.|   \_\n|_____\\\n◉◉◉◉";
+            case "stefania" -> "Kalush one love <3";
+            case "eurovision" -> "All votes for →→→Poland←←←";
             default -> makeMagic(messageText);
         };
 
