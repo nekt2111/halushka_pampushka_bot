@@ -8,6 +8,7 @@ apt-get update
 apt-get install maven -y
 
 git clone https://github.com/nekt2111/halushka_pampushka_bot.git
+git pull origin
 echo ':::::::::::::::::::::2'
 dir
 cd halushka_pampushka_bot
