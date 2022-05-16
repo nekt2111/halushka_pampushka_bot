@@ -14,6 +14,7 @@ cd halushka_pampushka_bot
 echo ':::::::::::::::::::::3'
 dir
 cd bot
+echo '💃🕺 хто не скаче, той москаль 💃🕺'
 cd appz_bot_example-master
 
 mvn clean install && cd hello_bot && mvn exec:java -Dexec.mainClass="kpi.acts.appz.bot.hellobot.HelloWorldBot" -Dexec.args="5303909693:AAGH-wVmTPhhn8mSCvWgezuNGdwRdAXSplM KPI2LabBot"
