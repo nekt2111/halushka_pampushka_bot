@@ -26,6 +26,8 @@ public final class HelloWorldBot extends Bot {
 
     @Override
     public void onUpdateReceived(Update update) {
+        System.out.println(update.getMessage());
+        System.out.println(update.getMessage().getText());
         sendTextMessage(update.getMessage(), getResponseMessageText(update.getMessage().getText()));
     }
 
@@ -36,14 +38,10 @@ public final class HelloWorldBot extends Bot {
         System.out.println(messageText);
         System.out.println(messageText.getClass());
 
-        switch ((String) messageText.toLowerCase()) {
-
-            case "tsymbal":
-                responseMessage = "hello";
-                break;
-            default:
-                responseMessage = makeMagic(messageText);
-                break;
+        if (messageText.equals("Tsymbal")) {
+            responseMessage = "hello";
+        } else {
+            responseMessage = makeMagic(messageText);
         }
 
         return responseMessage + "\n Have a pampushka with a halushka :)";
