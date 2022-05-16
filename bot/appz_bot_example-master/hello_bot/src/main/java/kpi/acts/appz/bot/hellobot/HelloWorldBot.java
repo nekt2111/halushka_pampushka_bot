@@ -30,7 +30,7 @@ public final class HelloWorldBot extends Bot {
     }
 
     public String getResponseMessageText(String messageText) {
-\
+
         String responseMessage = switch (messageText.toLowerCase()) {
             case "tsymbal" -> "The best";
             case "halushka" -> "PAMPUSHKA :)";
