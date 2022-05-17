@@ -55,7 +55,7 @@ public final class HelloWorldBot extends Bot {
                 responseMessage = "IT-армія України";
                 break;
             case "rolik":
-                responseMessage = ".___.|   |_|_____|0000";
+                responseMessage = ".___.\n|\\\\\\\\_\n|rolex\\\nOOOO";
                 break;
             case "stefania":
                 responseMessage = "Kalush one love <3";
