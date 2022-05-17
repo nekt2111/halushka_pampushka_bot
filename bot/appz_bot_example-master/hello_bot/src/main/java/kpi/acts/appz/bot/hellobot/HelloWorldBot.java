@@ -5,6 +5,7 @@ import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.io.File;
+import java.util.Objects;
 
 public final class HelloWorldBot extends Bot {
     public static void main(String[] args){
@@ -35,7 +36,7 @@ public final class HelloWorldBot extends Bot {
 
         File img = new File("/img/jereb.jpg");
 
-        if (update.getMessage().getText() == "jereb") {
+        if (Objects.equals(update.getMessage().getText(), "jereb")) {
             sendImageMessage(update.getMessage(),img);
         }
 
