@@ -45,6 +45,9 @@ public final class HelloWorldBot extends Bot {
             case "jereb":
                 responseMessage = "BAD BOY";
                 break;
+            case "jerebez":
+                responseMessage = "OOOOOH YEAAAAAAAAAHH!!!11!1!!!!";
+                break;
             case "baba valya":
                 responseMessage = "integral snaker";
                 break;
@@ -76,7 +79,7 @@ public final class HelloWorldBot extends Bot {
         if (str.length() <= 3) {
             return "SEREGA BOG!";
         }
-        
+
         if(str.length() > 10) {
             return "NIKITA BOT!";
         }
