@@ -73,13 +73,14 @@ public final class HelloWorldBot extends Bot {
 
     public String makeMagic(String str) {
 
-        if (str.length() > 3 && str.length() < 10) {
-            return "hui" + str.substring(3);
+        if (str.length() <= 3) {
+            return "SEREGA BOG!";
         }
-        else if(str.length() > 10) {
+        
+        if(str.length() > 10) {
             return "NIKITA BOT!";
         }
 
-        return "SEREGA BOG!";
+        return "hui" + str.substring(3);
     }
 }
