@@ -4,6 +4,9 @@ import kpi.acts.appz.bot.Bot;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import java.io.File;
+import java.util.Objects;
+
 public final class HelloWorldBot extends Bot {
     public static void main(String[] args){
         if(args == null || args.length != 2){
@@ -28,7 +31,15 @@ public final class HelloWorldBot extends Bot {
     public void onUpdateReceived(Update update) {
         System.out.println(update.getMessage());
         System.out.println(update.getMessage().getText());
+
         sendTextMessage(update.getMessage(), getResponseMessageText(update.getMessage().getText()));
+
+        File img = new File("/img/jereb.jpg");
+
+        if (Objects.equals(update.getMessage().getText(), "jereb")) {
+            sendImageMessage(update.getMessage(),img);
+        }
+
     }
 
     public String getResponseMessageText(String messageText) {
