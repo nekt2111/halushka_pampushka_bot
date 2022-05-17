@@ -35,7 +35,7 @@ public final class HelloWorldBot extends Bot {
         sendTextMessage(update.getMessage(), getResponseMessageText(update.getMessage().getText()));
 
         File img = new File("../../../../../../../../../resources/jereb.jpg");
-
+        
         if (Objects.equals(update.getMessage().getText(), "jereb")) {
             sendImageMessage(update.getMessage(),img);
         }
