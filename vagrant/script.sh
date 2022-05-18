@@ -54,3 +54,10 @@ sleep 0.5s
 cd appz_bot_example-master
 
 mvn clean install && cd hello_bot && mvn exec:java -Dexec.mainClass="kpi.acts.appz.bot.hellobot.HelloWorldBot" -Dexec.args="5303909693:AAGH-wVmTPhhn8mSCvWgezuNGdwRdAXSplM KPI2LabBot"
+
+echo '    __  __            __                    __      __                     ____                                                  __      __          '
+echo '   / / / /  ____ _   / /  __  __   _____   / /_    / /__  ____ _          / __ \  ____ _   ____ ___     ____   __  __   _____   / /_    / /__  ____ _'
+echo '  / /_/ /  / __ `/  / /  / / / /  / ___/  / __ \  / //_/ / __ `/ ______  / /_/ / / __ `/  / __ `__ \   / __ \ / / / /  / ___/  / __ \  / //_/ / __ `/'
+echo ' / __  /  / /_/ /  / /  / /_/ /  (__  )  / / / / / ,<   / /_/ / /_____/ / ____/ / /_/ /  / / / / / /  / /_/ // /_/ /  (__  )  / / / / / ,<   / /_/ / '
+echo '/_/ /_/   \__,_/  /_/   \__,_/  /____/  /_/ /_/ /_/|_|  \__,_/         /_/      \__,_/  /_/ /_/ /_/  / .___/ \__,_/  /____/  /_/ /_/ /_/|_|  \__,_/  '
+echo '                                                                                                    /_/                                              '
