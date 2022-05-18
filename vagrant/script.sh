@@ -1,5 +1,10 @@
 #! /bin/bash
+
+echo ':::::::::::::::::::::-1'
+dir
 rm -r bot
+echo ':::::::::::::::::::::0'
+dir
 mkdir bot
 echo ':::::::::::::::::::::1'
 dir
@@ -8,10 +13,10 @@ cd bot
 apt-get update
 apt-get install maven -y
 
-git clone https://github.com/nekt2111/halushka_pampushka_bot.git
+git clone https://github.com/halushko/appz_bot_example.git
 echo ':::::::::::::::::::::2'
 cd halushka_pampushka_bot
-#git pull origin
+git pull origin
 dir
 echo ':::::::::::::::::::::3'
 dir
