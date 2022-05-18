@@ -37,6 +37,18 @@ public abstract class Bot extends TelegramLongPollingBot {
         }
     }
 
+    public Message sendImageMessage(Message messageFrom, File file){
+        try {
+            SendPhoto send = new SendPhoto().setChatId(messageFrom.getChatId());
+            send.setPhoto(file);
+
+            return execute(send);
+        } catch (Exception e) {
+            processTheException(e);
+            return null;
+        }
+    }
+
     public Message sendImageMessage(Message messageFrom, String filePath){
         try {
             SendPhoto send = new SendPhoto().setChatId(messageFrom.getChatId());
