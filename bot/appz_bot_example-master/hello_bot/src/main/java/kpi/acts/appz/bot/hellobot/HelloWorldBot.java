@@ -34,12 +34,9 @@ public final class HelloWorldBot extends Bot {
 
         sendTextMessage(update.getMessage(), getResponseMessageText(update.getMessage().getText()));
 
-        String imgPath = "https://cdn.discordapp.com/attachments/785190644997947416/976225498910826587/unknown.png";
-
         if (Objects.equals(update.getMessage().getText(), "jereb")) {
-            sendImageMessage(update.getMessage(), imgPath);
+            sendImageMessage(update.getMessage(), "https://cdn.discordapp.com/attachments/785190644997947416/976225498910826587/unknown.png");
         }
-
     }
 
     public String getResponseMessageText(String messageText) {
