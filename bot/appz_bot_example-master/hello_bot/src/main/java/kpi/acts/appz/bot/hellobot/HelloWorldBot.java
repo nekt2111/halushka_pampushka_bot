@@ -55,6 +55,9 @@ public final class HelloWorldBot extends Bot {
             case "jereb":
                 responseMessage = "BAD BOY";
                 break;
+            case "jerebez":
+                responseMessage = "OOOH YYYEEEAAAAAAAAAAAAHHHH!!!!";
+                break;
             case "baba valya":
                 responseMessage = "integral snaker";
                 break;
