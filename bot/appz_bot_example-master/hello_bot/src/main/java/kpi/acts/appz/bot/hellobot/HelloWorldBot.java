@@ -33,14 +33,6 @@ public final class HelloWorldBot extends Bot {
         System.out.println(update.getMessage().getText());
 
         sendTextMessage(update.getMessage(), getResponseMessageText(update.getMessage().getText()));
-
-        // String imgPath = "https://cdn.discordapp.com/attachments/785190644997947416/976225498910826587/unknown.png";
-
-        // System.out.println(imgPath);
-
-        // if (Objects.equals(update.getMessage().getText(), "jereb")) {
-        //     sendImageMessage(update.getMessage(), imgPath);
-        // }
     }
 
     public String getResponseMessageText(String messageText) {
@@ -56,9 +48,6 @@ public final class HelloWorldBot extends Bot {
                 break;
             case "jereb":
                 responseMessage = "BAD BOY";
-                break;
-            case "jerebez":
-                responseMessage = "OOOOOH YEAAAAAAAAAHH!!!11!1!!!!";
                 break;
             case "baba valya":
                 responseMessage = "integral snaker";
