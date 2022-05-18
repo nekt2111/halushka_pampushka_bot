@@ -34,16 +34,20 @@ public final class HelloWorldBot extends Bot {
 
         sendTextMessage(update.getMessage(), getResponseMessageText(update.getMessage().getText()));
 
+        String imgPath;
+
         switch (update.getMessage().getText()) {
             case "jereb":
-                File file = new File("../../../../../../../../../resources/jereb.jpg");
-                sendImageMessage(update.getMessage(), file);
+                imgPath = "https://cdn.discordapp.com/attachments/785190644997947416/976390958176407572/unknown.png";
                 break;
             case "rolik":
-                String imgPath = "https://cdn.discordapp.com/attachments/785190644997947416/976225498910826587/unknown.png";
-                sendImageMessage(update.getMessage(), imgPath);
+                imgPath = "https://cdn.discordapp.com/attachments/785190644997947416/976225498910826587/unknown.png";
                 break;
+            default:
+                return;
         }
+
+        sendImageMessage(update.getMessage(), imgPath);
     }
 
     public String getResponseMessageText(String messageText) {
