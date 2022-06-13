@@ -1,14 +1,23 @@
 package Bot;
 
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import javax.naming.OperationNotSupportedException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 
 public final class HelloWorldBot extends Bot {
 
     public HelloWorldBot(String token, String botName) {
         super(token, botName);
+        try {
+            AudioHelper.Initialize();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -19,16 +28,30 @@ public final class HelloWorldBot extends Bot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        System.out.println(update.getMessage());
-        System.out.println(update.getMessage().getText());
 
-        sendTextMessage(update.getMessage(), getResponseMessageText(update.getMessage().getText()));
-        File img = new File("../img/jereb.jpg");
+        Message message = update.getMessage();
+        String messageText = message.getText();
 
-        if (Objects.equals(update.getMessage().getText(), "jereb")) {
-            sendImageMessage(update.getMessage(),"https://cdn.discordapp.com/attachments/785190644997947416/985974844946513930/jereb.jpg");
+        System.out.println(message);
+        System.out.println(messageText);
+
+        sendTextMessage(message, getResponseMessageText(messageText));
+
+        if (Objects.equals(messageText, "jereb")) {
+            sendImageMessage(message,"https://cdn.discordapp.com/attachments/785190644997947416/985974844946513930/jereb.jpg");
         }
 
+        String[] messageParts = messageText.split("");
+
+        if (messageParts.length > 1 && messageParts[0].equals("@Sv")) {
+            String audioText = messageText.substring("@Sv ".length());
+
+            try {
+                sendAudioMessage(message, "@Sv", AudioHelper.GetAudio(audioText));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public String getResponseMessageText(String messageText) {
@@ -70,7 +93,12 @@ public final class HelloWorldBot extends Bot {
                 responseMessage = "ENGLISH MOTHERFUCKER, DO YOU SPEAK IT? my birdie ;)";
                 break;
             default:
-                responseMessage = makeMagic(messageText);
+                String[] messageParts = messageText.split("");
+                if (messageParts.length > 1 && messageParts[0].equals("@Sv")) {
+                    responseMessage = "";
+                } else {
+                    responseMessage = makeMagic(messageText);
+                }
                 break;
         };
 

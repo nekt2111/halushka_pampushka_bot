@@ -2,12 +2,14 @@ package Bot;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.api.methods.send.SendAudio;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.File;
+import java.io.InputStream;
 
 public abstract class Bot extends TelegramLongPollingBot {
     private final String token, botName;
@@ -53,6 +55,18 @@ public abstract class Bot extends TelegramLongPollingBot {
         try {
             SendPhoto send = new SendPhoto().setChatId(messageFrom.getChatId());
             send.setPhoto(url);
+
+            return execute(send);
+        } catch (Exception e) {
+            processTheException(e);
+            return null;
+        }
+    }
+
+    public Message sendAudioMessage(Message messageFrom, String fileName, InputStream inputStream){
+        try {
+            SendAudio send = new SendAudio().setChatId(messageFrom.getChatId());
+            send.setAudio(fileName, inputStream);
 
             return execute(send);
         } catch (Exception e) {
