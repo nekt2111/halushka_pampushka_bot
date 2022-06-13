@@ -4,7 +4,7 @@ pipeline {
         stage('Preparing for build') {
             steps {
                 script {
-                    def isContainerExists = sh(script: "docker ps -q -f name='halushka_pampushka_bot:latest'", returnStdout: true) != ""
+                    def isContainerExists = sh(script: "docker ps -q -f name='halushka_pampushka_bot'", returnStdout: true) != ""
                     def isImageExists = sh(script: "docker images -q halushka_pampushka_bot:latest", returnStdout: true) != ""
 
                     echo "${isContainerExists}"
@@ -33,7 +33,7 @@ pipeline {
         }
         stage ('Start Application in Docker') {
             steps {
-                sh 'docker run -p 8083:8080 halushka_pampushka_bot:latest'
+                sh 'docker run -p 8083:8080 --name halushka_pampushka_bot:latest halushka_pampushka_bot'
             }
         }
     }
