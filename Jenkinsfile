@@ -9,9 +9,9 @@ pipeline {
 
                     echo "${isContainerExists}"
 
-                    docker ps -a
+                    sh 'docker ps -a'
 
-                    docker ps
+                    sh 'docker ps'
 
                     echo "${isImageExists}"
 
