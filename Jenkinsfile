@@ -1,13 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Preparing for Build') {
-            steps {
-                script {
-
-                }
-            }
-        }
         stage('Build Docker Image') {
         steps {
                 sh 'docker build -t halushka_pampushka_bot:latest .'
