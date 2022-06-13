@@ -66,6 +66,9 @@ public final class HelloWorldBot extends Bot {
             case "eurovision":
                 responseMessage = "All votes for >>>Poland<<<";
                 break;
+            case "aleksandra bondarenko":
+                responseMessage = "ENGLISH MOTHERFUCKER, DO YOU SPEAK IT? my birdie ;)";
+                break;
             default:
                 responseMessage = makeMagic(messageText);
                 break;
