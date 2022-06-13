@@ -2,19 +2,23 @@ pipeline {
     agent any
     stages {
         stage('Preparing for build') {
-            def isContainerExists = sh(script: "docker ps -q -f name='halushka_pampushka_bot:latest'", returnStdout: true) != ""
-            def isImageExists = sh(script: "docker images -q halushka_pampushka_bot:latest", returnStdout: true) != ""
+            steps {
+                script {
+                    def isContainerExists = sh(script: "docker ps -q -f name='halushka_pampushka_bot:latest'", returnStdout: true) != ""
+                    def isImageExists = sh(script: "docker images -q halushka_pampushka_bot:latest", returnStdout: true) != ""
 
-            echo "${isContainerExists}"
-            echo "${isImageExists}"
+                    echo "${isContainerExists}"
+                    echo "${isImageExists}"
 
-            if (isContainerExists) {
-                sh 'docker stop -t 0 halushka_pampushka_bot:latest'
-                sh 'docker rm halushka_pampushka_bot:latest'
-            }
+                    if (isContainerExists) {
+                        sh 'docker stop -t 0 halushka_pampushka_bot:latest'
+                        sh 'docker rm halushka_pampushka_bot:latest'
+                    }
 
-            if (isImageExists) {
-                sh 'docker rmi -f halushka_pampushka_bot:latest'
+                    if (isImageExists) {
+                        sh 'docker rmi -f halushka_pampushka_bot:latest'
+                    }
+                }
             }
         }
         stage('Build Docker Image') {
