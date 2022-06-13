@@ -1,7 +1,5 @@
 package Bot;
 
-import org.telegram.telegrambots.meta.api.objects.Update;
-
 import javax.naming.OperationNotSupportedException;
 import javax.sound.sampled.*;
 import java.io.*;
