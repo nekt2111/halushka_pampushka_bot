@@ -26,7 +26,7 @@ public final class HelloWorldBot extends Bot {
         File img = new File("../img/jereb.jpg");
 
         if (Objects.equals(update.getMessage().getText(), "jereb")) {
-            sendImageMessage(update.getMessage(),img);
+            sendImageMessage(update.getMessage(),"https://cdn.discordapp.com/attachments/785190644997947416/985974844946513930/jereb.jpg");
         }
 
     }
