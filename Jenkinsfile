@@ -8,6 +8,11 @@ pipeline {
                     def isImageExists = sh(script: "docker images -q halushka_pampushka_bot:latest", returnStdout: true) != ""
 
                     echo "${isContainerExists}"
+
+                    docker ps -a
+
+                    docker ps
+
                     echo "${isImageExists}"
 
                     if (isContainerExists) {
