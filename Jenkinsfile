@@ -33,7 +33,7 @@ pipeline {
         }
         stage ('Start Application in Docker') {
             steps {
-                sh 'docker run -p 8083:8080 --name halushka_pampushka_bot halushka_pampushka_bot'
+                sh 'docker run -d --name halushka_pampushka_bot halushka_pampushka_bot'
             }
         }
     }
