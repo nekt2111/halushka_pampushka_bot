@@ -4,7 +4,6 @@ pipeline {
         stage('Preparing for build') {
             steps {
                 script {
-                    sh 'docker rm halushka_pampushka_bot'
 
                     def isContainerExists = sh(script: "docker ps -q -f name='halushka_pampushka_bot'", returnStdout: true) != ""
                     def isImageExists = sh(script: "docker images -q halushka_pampushka_bot", returnStdout: true) != ""
