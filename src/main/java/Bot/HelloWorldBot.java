@@ -13,11 +13,6 @@ public final class HelloWorldBot extends Bot {
 
     public HelloWorldBot(String token, String botName) {
         super(token, botName);
-        try {
-            AudioHelper.Initialize();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -40,17 +35,6 @@ public final class HelloWorldBot extends Bot {
             sendImageMessage(message,"https://cdn.discordapp.com/attachments/785190644997947416/985974844946513930/jereb.jpg");
         }
 
-        String[] messageParts = messageText.split("");
-
-        if (messageParts.length > 1 && messageParts[0].equals("@Sv")) {
-            String audioText = messageText.substring("@Sv ".length());
-
-            try {
-                sendAudioMessage(message, "@Sv", AudioHelper.GetAudio(audioText));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     public String getResponseMessageText(String messageText) {

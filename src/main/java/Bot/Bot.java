@@ -63,18 +63,6 @@ public abstract class Bot extends TelegramLongPollingBot {
         }
     }
 
-    public Message sendAudioMessage(Message messageFrom, String fileName, InputStream inputStream){
-        try {
-            SendAudio send = new SendAudio().setChatId(messageFrom.getChatId());
-            send.setAudio(fileName, inputStream);
-
-            return execute(send);
-        } catch (Exception e) {
-            processTheException(e);
-            return null;
-        }
-    }
-
     protected abstract void processTheException(Exception e);
 
     @Override
