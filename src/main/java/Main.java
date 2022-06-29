@@ -8,6 +8,6 @@ public class Main {
         Bot.runBot(new HelloWorldBot("5303909693:AAGH-wVmTPhhn8mSCvWgezuNGdwRdAXSplM","halushka_pampushka_bot"));
     }
 
-    // TEST COMMIT 21312 312312312331231312
+    // TEST COMMIT 21312 312312
 
 }
